@@ -6,6 +6,10 @@ import {
   sha512Bytes
 } from "secret-manager-crypto-utils";
 
+import {
+  bytesToHex
+} from "thingy-byte-utils";
+
 //###########################################################
 //region auth code
 
@@ -29,7 +33,7 @@ export var createAuthCodeBytes = function(seedBytes, request) {
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
   }
-  seedHex = tbut.bytesToHex(seedBytes);
+  seedHex = bytesToHex(seedBytes);
   entropySource = seedHex + requestString;
   return sha256Bytes(entropySource);
 };
@@ -59,7 +63,7 @@ export var createSessionKeyBytes = function(seedBytes, request) {
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
   }
-  seedHex = tbut.bytesToHex(seedBytes);
+  seedHex = bytesToHex(seedBytes);
   entropySource = seedHex + requestString;
   return sha512Bytes(entropySource);
 };
