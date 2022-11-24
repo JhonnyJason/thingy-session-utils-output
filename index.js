@@ -19,6 +19,8 @@ export var createAuthCode = function(seedHex, request) {
   var entropySource, requestString;
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
+  } else {
+    requestString = request;
   }
   entropySource = seedHex + requestString;
   return sha256Hex(entropySource);
@@ -32,6 +34,8 @@ export var createAuthCodeBytes = function(seedBytes, request) {
   var entropySource, requestString, seedHex;
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
+  } else {
+    requestString = request;
   }
   seedHex = bytesToHex(seedBytes);
   entropySource = seedHex + requestString;
@@ -49,6 +53,8 @@ export var createSessionKey = function(seedHex, request) {
   var entropySource, requestString;
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
+  } else {
+    requestString = request;
   }
   entropySource = seedHex + requestString;
   return sha512Hex(entropySource);
@@ -62,6 +68,8 @@ export var createSessionKeyBytes = function(seedBytes, request) {
   var entropySource, requestString, seedHex;
   if (typeof request !== "string") {
     requestString = JSON.stringify(request);
+  } else {
+    requestString = request;
   }
   seedHex = bytesToHex(seedBytes);
   entropySource = seedHex + requestString;
