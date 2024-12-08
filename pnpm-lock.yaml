@@ -1,0 +1,38 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      secret-manager-crypto-utils:
+        specifier: ^0.3.1
+        version: 0.3.1
+      thingy-byte-utils:
+        specifier: 0.0.8
+        version: 0.0.8
+
+packages:
+
+  '@noble/ed25519@2.1.0':
+    resolution: {integrity: sha512-KM4qTyXPinyCgMzeYJH/UudpdL+paJXtY3CHtHYZQtBkS8MZoPr4rOikZllIutJe0d06QDQKisyn02gxZ8TcQA==}
+
+  secret-manager-crypto-utils@0.3.1:
+    resolution: {integrity: sha512-w4usWFH1r4ucR8dZBk81kmBo3ZOouU6a+/fZEaOFaP22icFapbelf1f5M1QwcbZ0AwPDeWfwvq8DfNOr0PAQyg==}
+
+  thingy-byte-utils@0.0.8:
+    resolution: {integrity: sha512-m9+aSv0XrU1g6Da61Qq0ZnyflSYx1/uWfD98UFziOV4WMrEzE5eHTjXGhxhFRzauL3EkwujZZJbOBxj8PzHyAg==}
+
+snapshots:
+
+  '@noble/ed25519@2.1.0': {}
+
+  secret-manager-crypto-utils@0.3.1:
+    dependencies:
+      '@noble/ed25519': 2.1.0
+      thingy-byte-utils: 0.0.8
+
+  thingy-byte-utils@0.0.8: {}
